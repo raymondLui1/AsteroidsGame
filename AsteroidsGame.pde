@@ -1,5 +1,7 @@
   //your variable declarations here
   Spaceship flyd = new Spaceship(); 
+  //Asteroid giga = new Asteroid();
+  ArrayList <Asteroid> giga = new ArrayList <Asteroid>();
   Star [] backStars; 
   boolean keyIs5 = false;
   boolean keyIs4 = false;
@@ -11,6 +13,8 @@ public void setup()
   backStars = new Star[1000];
   for(int i = 0; i < backStars.length; i++)
     backStars[i] = new Star();
+  for(int i = 0; i < 10; i++)
+    giga.add(new Asteroid());
   //your code here
 }
 public void draw() 
@@ -22,7 +26,7 @@ public void draw()
   flyd.show();
   if(keyIs5 == true)
   {
-    flyd.accelerate(0.5);
+    flyd.accelerate(0.1);
   }
   if(keyIs6 == true)
     flyd.turn(5);
@@ -38,6 +42,13 @@ public void draw()
     keyIs0 = false;
   }
   flyd.move();
+  for(int i = 0; i < giga.size(); i++){
+    giga.get(i).show();
+    giga.get(i).move();
+    float collRange = dist((float)flyd.getMyCenterX(), (float)flyd.getMyCenterY(), (float)giga.get(i).getMyCenterX(), (float)giga.get(i).getMyCenterY()); 
+    if(collRange < 20)
+      giga.remove(i);
+  }
   //your code here
 }
 
