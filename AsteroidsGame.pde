@@ -6,7 +6,7 @@
   boolean keyIs4 = false;
   boolean keyIs6 = false;
   boolean keyIs0 = false;
-  boolean keyIs9 = false;
+  boolean keyIsSpacebar = false;
   int secondsPast = 0;
 public void setup() 
 {
@@ -76,7 +76,7 @@ public void draw()
       keyIs0 = false;
     }
     flyd.move();
-    if(keyIs9 == true)
+    if(keyIsSpacebar == true)
       poppy.add(new Bullet(flyd));    
     if(giga.size() < 1){
       for(int i = 0; i < 20; i++){
@@ -104,8 +104,8 @@ public void keyPressed()
     keyIs6 = true;  
   if(key == '0')
     keyIs0 = true;  
-  if(key == '9')
-    keyIs9 = true;
+  if(key == ' ')
+    keyIsSpacebar = true;
 }
 
 public void keyReleased()
@@ -118,6 +118,6 @@ public void keyReleased()
     keyIs6 = false;  
   if(key == '0')
     keyIs0 = false; 
-  if(key == '9')
-    keyIs9 = false;
+  if(key == ' ')
+    keyIsSpacebar = false;
 }
