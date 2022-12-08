@@ -27,7 +27,7 @@ public void draw()
     fill(255);
     textSize(20);
     text("Health is " + flyd.getMyHitPoints(), 870, 20);
-    text("Time: " + secondsPast/60, 870, 40);
+    text("Time: " + (int)(secondsPast/60), 870, 40);
     for(int i = 0; i < giga.size(); i++){
       giga.get(i).show();
       giga.get(i).move();
