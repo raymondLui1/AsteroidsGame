@@ -1,8 +1,7 @@
 class Spaceship extends Floater  
 {   
-    //your code here
-    public Spaceship()
-    {
+  private int hitPoints = 100;
+    public Spaceship(){
       corners = 20;  //the number of corners, a triangular floater has 3  
       xCorners = new int[]{0, -10, -16, -16, -10, -10, -16, -16, -10, -10, -16, -16, -10, 0, 16, 12, 14, 14, 12, 16};
       yCorners = new int[]{8, 10, 10, 6, 6, 2, 2, -2, -2, -6, -6, -10, -10, -8, -5, -3, -1, 1, 3, 5};
@@ -14,13 +13,11 @@ class Spaceship extends Floater
       myPointDirection = 0; //holds current direction the ship is pointing in degrees  
     } 
     
-    public void setMyCenterX(double dNum)
-    {
+    public void setMyCenterX(double dNum){
       myCenterX = dNum;
     }
     
-    public void setMyCenterY(double dNum)
-    {
+    public void setMyCenterY(double dNum){
       myCenterY = dNum;
     }
     
@@ -62,5 +59,15 @@ class Spaceship extends Floater
     public double getMyPointDirection()
     {
       return myPointDirection;
+    }
+    
+    public int getMyHitPoints()
+    {
+      return hitPoints;
+    }
+    
+    public void loseHitPoints()
+    {
+      hitPoints -= 10;
     }
 }
